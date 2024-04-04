@@ -22,9 +22,27 @@
   </header>
   <div class="container">
     <div class="text-center mb-5">
-      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal">Add Task</button>
+      <button class="btn btn-success" id="addTaskBtn" data-bs-toggle="modal" data-bs-target="#formModal">Add Task</button>
     </div>
+    
     <!-- Todo: Create a modal with a form to add tasks -->
+    <div id="taskModal" class="modal" >
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add Task</h2>
+        <form id="taskForm">
+          <label for="taskTitle">Title:</label>
+          <input type="text" id="taskTitle" name="taskTitle">
+          <label for="taskDescription">Description:</label>
+          <textarea id="taskDescription" name="taskDescription"></textarea>
+          <label for="taskDeadline">Deadline:</label>
+          <input type="date" id="taskDeadline" name="taskDeadline">
+          <button type="submit" class="saveTask">Save Task</button>
+        </form>
+      </div>
+    </div>
+      
+
     <div class="row swim-lanes text-center justify-content-between">
       <div class="col-12 col-lg-4 d-flex">
         <div id="to-do" class="card border-light mb-3 lane flex-grow-1">
@@ -58,6 +76,14 @@
       </div>
     </div>
   </div>
+
+
+  <div class="task-card">
+    <div class="task-title">${task.title}</div>
+    <div class="task-description">${task.description}</div>
+    <div class="task-deadline">Deadline: ${task.deadline}</div>
+    <button class="delete-task-btn">Delete</button>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

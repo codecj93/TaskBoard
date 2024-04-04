@@ -14,3 +14,8 @@ body {
 .task-card:hover {
   cursor: grab;
 }
+
+#taskModal {
+  background-color: lightgray;
+  border-color: black;
+}
